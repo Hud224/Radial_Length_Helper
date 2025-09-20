@@ -46,7 +46,7 @@ class RadialLengthHelper:
     RETURN_TYPES = ("INT", "INT", "INT")
     RETURN_NAMES = ("L_snapped", "W_out", "H_out")
     FUNCTION = "compute"
-    CATEGORY = "WAN / Radial"
+    CATEGORY = "RadialAttnHelper / RadialLengthHelper"
     OUTPUT_NODE = True
 
     def compute(self, model_kind: str, width: int, height: int, length: int):
@@ -143,7 +143,7 @@ class WanTokenInspector:
     RETURN_TYPES = ("INT", "INT", "INT", "STRING", "STRING")
     RETURN_NAMES = ("Tprime", "Tokens", "Tokens_mod128", "Valid", "Congruence")
     FUNCTION = "inspect"
-    CATEGORY = "WAN / Radial"
+    CATEGORY = "RadialAttnHelper / WanTokenInspector"
     OUTPUT_NODE = True
 
     def inspect(self, model_kind: str, width: int, height: int, L: int, ui_preview: str = "on", recalc: bool = False):
@@ -200,6 +200,6 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "RadialLengthHelper": "Radial Length Helper (WAN)",
+    "RadialLengthHelper": "WAN Radial Length Helper",
     "WanTokenInspector": "WAN Token Inspector",
 }
